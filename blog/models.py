@@ -37,3 +37,9 @@ class Post(models.Model):
     )
     objects = models.Manager()  # default manager
     postobjects = PostObjects()  # custome manager
+
+    class Meta:
+        ordering = ('-published',)
+
+    def __str__(self):
+        return self.titles
